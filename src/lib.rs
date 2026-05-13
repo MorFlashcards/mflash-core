@@ -332,6 +332,16 @@ pub mod db {
 
         Ok(deck)
     }
+
+    /// Updates a single card's content in the SQLite database for real-time editing.
+    /// Used by the Visual Editor to persist changes instantly (the new "source of truth").
+    pub fn update_single_card(conn: &Connection, card: &Card) -> Result<()> {
+        conn.execute(
+            "UPDATE cards SET term = ?1, definition = ?2, prompt = ?3, answer = ?4 WHERE id = ?5",
+            (&card.term, &card.definition, &card.prompt, &card.answer, &card.id),
+        )?;
+        Ok(())
+    }
 }
 
 pub mod translator {
