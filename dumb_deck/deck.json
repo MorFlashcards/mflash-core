@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "title": "Dumb Test Deck",
+  "description": "A tiny fake mflash deck for testing unpacking.",
+  "cards": [
+    {
+      "id": "card-001",
+      "front": "What is this?",
+      "back": "A dumb test card."
+    }
+  ],
+  "media": []
+}

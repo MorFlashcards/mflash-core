@@ -1,0 +1,37 @@
+[package]
+name = "mflash-core"
+version = "0.1.0"
+edition = "2021"
+description = "The headless, offline-first engine and CLI for mflash v4"
+license = "Unlicense"
+repository = "https://github.com/MorFlashcards/mflash-core" 
+
+[dependencies]
+# CLI Parsing
+clap = { version = "4.4", features = ["derive"] }
+
+# Protobuf support
+prost = "0.12"
+
+# SQLite for the live workspace
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# Archiving and Compression
+zip = { version = "0.6", default-features = false, features = ["deflate", "zstd"] }
+zstd = "0.13"
+
+# Serialization for our "Universal Translator"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+uuid = { version = "1.23.1", features = ["v4"] }
+dirs = "6.0.0"
+walkdir = "2.5.0"
+bytes = "1.11.1"
+serde_yaml = "0.9.34"
+rayon = "1.12.0"
+image = { version = "0.25.10", features = ["webp"] }
+
+[build-dependencies]
+# This compiles our .proto file into Rust structs automatically
+prost-build = "0.12"
