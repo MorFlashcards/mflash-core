@@ -1,6 +1,6 @@
 [package]
 name = "mflash-core"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "The headless, offline-first engine and CLI for mflash v4"
 license = "Unlicense"
