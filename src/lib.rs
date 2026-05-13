@@ -7,6 +7,9 @@ pub mod pb {
     include!(concat!(env!("OUT_DIR"), "/mflash.v4.rs"));
 }
 
+#[cfg(feature = "csv_import")]
+pub mod importer;
+
 pub mod workspace {
     use std::fs;
     use std::io::{Read, Write};
